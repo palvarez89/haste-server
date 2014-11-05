@@ -4,7 +4,7 @@ import urllib2
 import os
 import json
 
-URL = 'http://85.199.252.87/documents'
+URL = 'http://paste.baserock.org/documents'
 
 def run(*args):
     if args:
@@ -19,7 +19,7 @@ def run(*args):
         response = urllib2.urlopen(req)
         the_page = response.read()
         key = json.loads(the_page)['key']
-        url = "http://85.199.252.87/%s" % key
+        url = "http://paste.baserock.org/%s" % key
         if extensions[i]:
             url += extensions[i]
         print url
